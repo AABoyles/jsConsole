@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+  <title>jsConsole</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.2/underscore-min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/css/bootstrap-theme.min.css" />
+  <script src="libraries/src-min-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="navbar navbar-default navbar-static-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <strong><a class="navbar-brand" href="#">jsConsole</a></strong>
+        <i class="navbar-brand">On-the-fly JSON manuiplation with <a href="http://underscorejs.org">Underscore.js</a></i>
+      </div>
+    </div>
+  </nav>
+  <div class="row">
+    <div role="tabpanel" class="col-md-6" id="input">
+      <ul class="nav nav-tabs">
+        <li role="presentation" class="active"><a href="#origdata-wrapper" aria-controls="origdata-wrapper" role="tab" data-toggle="tab">Input Data</a></li>
+        <li role="presentation"><a href="#script-wrapper" aria-controls="script-wrapper" role="tab" data-toggle="tab">Modifier Script</a></li>
+      </ul>
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane" id="origdata-wrapper">
+          <textarea id="origdata" class="form-control"></textarea>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="script-wrapper">
+          <textarea id="script" class="form-control"></textarea>
+          <button id="execute" class="btn btn-default" type="button">Execute!</button>
+        </div>
+      </div>
+    </div>
+    <div role="tabpanel" class="col-md-6" id="output">
+      <ul class="nav nav-tabs">
+        <li role="presentation" class="active"><a href="#outdata-wrapper" aria-controls="outdata-wrapper" role="tab" data-toggle="tab">Output Data</a></li>
+      </ul>
+      <div role="tabpanel" class="tab-pane" id="outdata-wrapper">
+        <textarea id="outdata" class="form-control"></textarea>
+      </div>
+    </div>
+  </div>
+  <script src="console.js"></script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+html{
+  height:100%;
+}
+body{
+  height:100%;
+}
+.row{
+  width:100%;
+  height:calc(100% - 52px);
+  margin:0;
+}
+#script{
+  max-width:100%;
+  min-height: 400px;
+}
+#execute{
+  position: absolute;
+  right: 25px;
+  top: 50px;
+  z-index: 1;
+}
