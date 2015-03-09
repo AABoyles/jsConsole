@@ -12,6 +12,7 @@ $(function(){
   outeditor = ace.edit("outdata");
   outeditor.setTheme("ace/theme/github");
   outeditor.getSession().setMode("ace/mode/json");
+  outeditor.setReadOnly(true);
 
   $("#execute").click(function(){
     input = JSON.parse(inputeditor.getValue());

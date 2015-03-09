@@ -12,6 +12,18 @@ I frequently find myself having JSON strings and needing to refactor them.  Ther
 
 If you want to, give it a try.
 
+How do you use it?
+------------------
+
+Go to http://code.aaboyles.com/jsConsole 
+
+The left pane is the script you write to modify your data.  The right pane contains tabs for Input and Output data.
+
+1. Paste your Input Data into the right pane under the Input Data. It must be valid, parsable JSON.
+2. Write your mapper.  The input data is available as a parsed Javascript object under the variable name "input".  Assign the final value you need to a Javascript object called "output".
+3. Click Execute.  Your mapper will run, and the value found in output will be JSON.stringify'ed.  That JSON string will appear in the output tab, which will materialize over the input data when execute is clicked.
+4. Copy your output data and go on your way!
+
 
 Couldn't you just use the Node.js CLI?
 --------------------------------------
