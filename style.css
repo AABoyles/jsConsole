@@ -6,8 +6,23 @@ body{
 }
 .row{
   width:100%;
-  height:calc(100% - 52px);
+  height:calc(100% - 123px);
   margin:0;
+}
+#input, #output{
+  height:100%;
+}
+.tab-content{
+  height:100%;
+}
+.tab-pane{
+  height:100%;
+}
+pre{
+  height:100%;
+}
+textarea{
+  height:100%;
 }
 #script{
   max-width:100%;
@@ -17,5 +32,12 @@ body{
   position: absolute;
   right: 25px;
   top: 50px;
+  z-index: 1;
+}
+#error-wrapper{
+  display: none;
+  position: absolute;
+  bottom: -50px;
+  right: 25px;
   z-index: 1;
 }

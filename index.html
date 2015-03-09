@@ -23,28 +23,32 @@
   <div class="row">
     <div role="tabpanel" class="col-md-6" id="input">
       <ul class="nav nav-tabs">
-        <li role="presentation" class="active"><a href="#origdata-wrapper" aria-controls="origdata-wrapper" role="tab" data-toggle="tab">Input Data</a></li>
-        <li role="presentation"><a href="#script-wrapper" aria-controls="script-wrapper" role="tab" data-toggle="tab">Modifier Script</a></li>
+        <li role="presentation" class="active"><a href="#script-wrapper" aria-controls="script-wrapper" role="tab" data-toggle="tab">Modifier Script</a></li>
       </ul>
       <div class="tab-content">
-        <div role="tabpanel" class="tab-pane" id="origdata-wrapper">
-          <textarea id="origdata" class="form-control"></textarea>
-        </div>
-        <div role="tabpanel" class="tab-pane" id="script-wrapper">
-          <textarea id="script" class="form-control"></textarea>
+        <div role="tabpanel" class="tab-pane active" id="script-wrapper">
+          <textarea id="script" class="form-control">output = _(input);</textarea>
           <button id="execute" class="btn btn-default" type="button">Execute!</button>
         </div>
       </div>
+      <div id="error-wrapper"></div>
     </div>
     <div role="tabpanel" class="col-md-6" id="output">
       <ul class="nav nav-tabs">
-        <li role="presentation" class="active"><a href="#outdata-wrapper" aria-controls="outdata-wrapper" role="tab" data-toggle="tab">Output Data</a></li>
+        <li role="presentation" class="active"><a href="#origdata-wrapper" aria-controls="origdata-wrapper" role="tab" data-toggle="tab">Input Data</a></li>
+        <li role="presentation"><a href="#outdata-wrapper" aria-controls="outdata-wrapper" role="tab" data-toggle="tab">Output Data</a></li>
       </ul>
-      <div role="tabpanel" class="tab-pane" id="outdata-wrapper">
-        <textarea id="outdata" class="form-control"></textarea>
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="origdata-wrapper">
+          <textarea id="origdata" class="form-control">{}</textarea>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="outdata-wrapper">
+          <textarea id="outdata" class="form-control">{}</textarea>
+        </div>
       </div>
     </div>
   </div>
   <script src="console.js"></script>
 </body>
 </html>
+

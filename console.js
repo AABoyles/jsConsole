@@ -1,25 +1,22 @@
-data = {}
-
-inputeditor = ace.edit("origdata");
-inputeditor.setTheme("ace/theme/github");
-inputeditor.getSession().setMode("ace/mode/json");
-
-jseditor = ace.edit("script");
-jseditor.setTheme("ace/theme/github");
-jseditor.getSession().setMode("ace/mode/javascript");
-
-outeditor = ace.edit("outdata");
-outeditor.setTheme("ace/theme/github");
-outeditor.getSession().setMode("ace/mode/json");
+var input = "{}", output = "{}", report = function(error){};
 
 $(function(){
-  $("#origdata").change(function(){
-    data = JSON.parse($(this).val());
-  });
+  inputeditor = ace.edit("origdata");
+  inputeditor.setTheme("ace/theme/github");
+  inputeditor.getSession().setMode("ace/mode/json");
+
+  jseditor = ace.edit("script");
+  jseditor.setTheme("ace/theme/github");
+  jseditor.getSession().setMode("ace/mode/javascript");
+
+  outeditor = ace.edit("outdata");
+  outeditor.setTheme("ace/theme/github");
+  outeditor.getSession().setMode("ace/mode/json");
 
   $("#execute").click(function(){
-    eval($("#script").val());
-    $("outdata").val(output);
+    input = JSON.parse(inputeditor.getValue());
+    eval(jseditor.getValue());
+    outeditor.setValue(JSON.stringify(output));
   });
-
 });
+
