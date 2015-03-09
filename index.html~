@@ -27,7 +27,7 @@
         <li role="presentation" class="active"><a href="#script-wrapper" aria-controls="script-wrapper" role="tab" data-toggle="tab">Modifier Script</a></li>
       </ul>
       <div class="tab-content">
-        <div role="tabpanel" class="tab-pane fade in active" id="script-wrapper">
+        <div role="tabpanel" class="tab-pane active" id="script-wrapper">
           <textarea id="script" class="form-control">output = _(input);</textarea>
           <a href="#outdata-wrapper" id="execute" class="btn btn-default">Execute!</a>
         </div>
@@ -40,10 +40,10 @@
         <li role="presentation"><a href="#outdata-wrapper" aria-controls="outdata-wrapper" role="tab" data-toggle="tab">Output Data</a></li>
       </ul>
       <div class="tab-content">
-        <div role="tabpanel" class="tab-pane fade in active" id="origdata-wrapper">
+        <div role="tabpanel" class="tab-pane active" id="origdata-wrapper">
           <textarea id="origdata" class="form-control">{}</textarea>
         </div>
-        <div role="tabpanel" class="tab-pane fade" id="outdata-wrapper">
+        <div role="tabpanel" class="tab-pane" id="outdata-wrapper">
           <textarea id="outdata" class="form-control">{}</textarea>
         </div>
       </div>

@@ -17,6 +17,7 @@ $(function(){
     input = JSON.parse(inputeditor.getValue());
     eval(jseditor.getValue());
     outeditor.setValue(JSON.stringify(output));
+    $('#output > ul > li > a:last').tab('show');
   });
 });
 
