@@ -3,12 +3,8 @@
 <head>
   <title>jsConsole</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/js/bootstrap.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.2/underscore-min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/css/bootstrap-theme.min.css" />
-  <script src="libraries/src-min-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -28,8 +24,21 @@
       </ul>
       <div class="tab-content">
         <div role="tabpanel" class="tab-pane fade in active" id="script-wrapper">
+          <nav class="navbar navbar-default editbar">
+            <div class="container-fluid editbar">
+              <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                  <li><button id="newscript" class="btn btn-default btn-xs navbar-btn"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></button></li>
+                  <li><button id="loadscript" class="btn btn-default btn-xs navbar-btn"><span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span></button></li>
+                  <li><button id="savescript" class="btn btn-default btn-xs navbar-btn"><span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span></button></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                  <li><button id="execute" class="btn btn-default btn-xs navbar-btn">Execute!</button></li>
+                </ul>
+              </div>
+            </div>
+          </nav>
           <textarea id="script" class="form-control">output = _(input);</textarea>
-          <a href="#outdata-wrapper" id="execute" class="btn btn-default">Execute!</a>
         </div>
       </div>
       <div id="error-wrapper"></div>
@@ -41,15 +50,52 @@
       </ul>
       <div class="tab-content">
         <div role="tabpanel" class="tab-pane fade in active" id="origdata-wrapper">
+          <nav class="navbar navbar-default editbar">
+            <div class="container-fluid editbar">
+              <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                  <li><button id="newinput" class="btn btn-default btn-xs navbar-btn" title="New JSON File"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></button></li>
+                  <li><button id="loadinput" class="btn btn-default btn-xs navbar-btn" title="Open JSON File"><span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span></button></li>
+                  <li><button id="saveinput" class="btn btn-default btn-xs navbar-btn" title="Save as JSON File"><span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span></button></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right"></ul>
+              </div>
+            </div>
+          </nav>
           <textarea id="origdata" class="form-control">{}</textarea>
         </div>
         <div role="tabpanel" class="tab-pane fade" id="outdata-wrapper">
+          <nav class="navbar navbar-default editbar">
+            <div class="container-fluid editbar">
+              <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                  <li><button id="copyoutput" class="btn btn-default btn-xs navbar-btn"><span class="glyphicon glyphicon-duplicate" aria-hidden="true"></span></button></li>
+                  <li><button id="saveoutput" class="btn btn-default btn-xs navbar-btn"><span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span></button></li>
+                  <li>
+                    <div class="btn-group" data-toggle="buttons">
+                      <label class="btn btn-default active btn-xs">
+                        <input type="radio" name="prints" id="pretty" autocomplete="off" checked>Pretty
+                      </label>
+                      <label class="btn btn-default btn-xs">
+                        <input type="radio" name="prints" id="ugly" autocomplete="off">Ugly
+                      </label>
+                    </div>
+                  </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                </ul>
+              </div>
+            </div>
+          </nav>
           <textarea id="outdata" class="form-control">{}</textarea>
         </div>
       </div>
     </div>
   </div>
+  <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.2/underscore-min.js"></script>
+  <script src="libraries/src-min-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
   <script src="console.js"></script>
 </body>
 </html>
-
