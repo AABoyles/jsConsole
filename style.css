@@ -28,6 +28,8 @@ body{
 }
 .navbar-btn.btn-xs{
   margin: 0;
+  line-height: 1;
+  padding: 3px 5px;
 }
 pre{
   height:100%;
