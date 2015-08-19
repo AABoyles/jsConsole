@@ -9,19 +9,27 @@ body{
   height:calc(100% - 147px);
   margin:0;
 }
-#input, #output{
-  height:100%;
+h3{
+  margin:0;
 }
-.tab-content{
+#input, #modifier, #output{
   height:100%;
+  font-family:Courier, Monospace;
 }
-.tab-pane{
+.col-md-4{
   height:100%;
 }
 .editbar{
   margin: 0;
   min-height:0;
   padding-left: 0;
+}
+.form-control{
+  padding: 0;
+  height:100%;
+}
+.CodeMirror{
+  height:auto;
 }
 .navbar-collapse{
   padding: 0;

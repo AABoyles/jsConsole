@@ -1,33 +1,66 @@
-var input = "{}", output = "{}", report = function(error){};
+var input = "{}", output = "{}";
 
 $(function(){
-  jseditor = ace.edit("script");
-  jseditor.setTheme("ace/theme/github");
-  jseditor.getSession().setMode("ace/mode/javascript");
+  
+  var inputeditor = CodeMirror($("#input")[0],{
+    value: input,
+    mode:  "javascript",
+    lineNumbers: true
+  });
+  inputeditor.on("change", function(e){
+    translate();
+  });
 
-  inputeditor = ace.edit("origdata");
-  inputeditor.setTheme("ace/theme/github");
-  inputeditor.getSession().setMode("ace/mode/json");
+  var jseditor = CodeMirror($("#modifier")[0],{
+    value: "output = _(input).map(function(val){\n  return val;\n});",
+    mode:  "javascript",
+    lineNumbers: true
+  });
+  jseditor.on("change", function(e){
+    translate();
+  });
 
-  outeditor = ace.edit("outdata");
-  outeditor.setTheme("ace/theme/github");
-  outeditor.getSession().setMode("ace/mode/json");
-  outeditor.setReadOnly(true);
+  var outputeditor = CodeMirror($("#output")[0],{
+    value: output,
+    mode:  "javascript",
+    lineNumbers: true,
+    readOnly: true
+  });
 
   var translate = function(){
     input = JSON.parse(inputeditor.getValue());
     eval(jseditor.getValue());
     var pretty = $('input[name="prints"]:checked').attr("id") == "pretty" ? 2 : 0;
-    outeditor.setValue(JSON.stringify(output, null, pretty));
-    $('#output > ul > li > a:last').tab('show');
+    outputeditor.setValue(JSON.stringify(output, null, pretty));
   };
 
-  $("#loadscript").click(function(){
-    if($(this).hasClass("active")){
-      $("#script-file").parent().fadeOut();
-    } else {
-      $("#script-file").parent().fadeIn();
+  $("#newinput").click(function(){
+    inputeditor.setValue("{}");
+  });
+
+  $("#origdata-file").change(function(evt) {
+    evt.stopPropagation();
+    evt.preventDefault();
+    var file = evt.target.files[0];
+    var reader = new FileReader();
+    reader.onloadend = function(evt) {
+      if (evt.target.readyState == FileReader.DONE) {
+        inputeditor.setValue(evt.target.result);
+        $("#origdata-file").parent().fadeOut();
+        $("#loadinput").removeClass("active");
+      }
     }
+    reader.readAsText(file);
+  });
+
+  $("#saveinput").mousedown(function(){
+    this.href="data:text;charset=utf8,"+inputeditor.getValue();
+    this.download="input.json";
+  });
+
+  $("#newscript").click(function(){
+    jseditor.setValue("output = _(input);");
+    $("#origdata-file")[0].value = ""
   });
 
   $("#script-file").change(function(evt) {
@@ -50,47 +83,8 @@ $(function(){
     this.download="edit.js";
   });
 
-  $("#execute").click(translate);
-
-  $("#loadinput").click(function(){
-    if($(this).hasClass("active")){
-      $("#origdata-file").parent().fadeOut();
-    } else {
-      $("#origdata-file").parent().fadeIn();
-    }
-  });
-
-  $("#origdata-file").change(function(evt) {
-    evt.stopPropagation();
-    evt.preventDefault();
-    var file = evt.target.files[0];
-    var reader = new FileReader();
-    reader.onloadend = function(evt) {
-      if (evt.target.readyState == FileReader.DONE) {
-        inputeditor.setValue(evt.target.result);
-        $("#origdata-file").parent().fadeOut();
-        $("#loadinput").removeClass("active");
-      }
-    }
-    reader.readAsText(file);
-  });
-
-  $("#newscript").click(function(){
-    jseditor.setValue("output = _(input);");
-    $("#origdata-file")[0].value = ""
-  });
-
-  $("#newinput").click(function(){
-    inputeditor.setValue("{}");
-  });
-
-  $("#saveinput").mousedown(function(){
-    this.href="data:text;charset=utf8,"+inputeditor.getValue();
-    this.download="input.json";
-  });
-
   $("#saveoutput").mousedown(function(){
-    this.href="data:text;charset=utf8,"+outeditor.getValue();
+    this.href="data:text;charset=utf8,"+outputeditor.getValue();
     this.download="output.json";
   });
 
