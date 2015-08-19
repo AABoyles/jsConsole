@@ -4,20 +4,23 @@ html{
 body{
   height:100%;
 }
+.container-fluid{
+  height:100%;
+}
 .row{
   width:100%;
   height:calc(100% - 147px);
   margin:0;
 }
-h3{
-  margin:0;
-}
-#input, #modifier, #output{
-  height:100%;
-  font-family:Courier, Monospace;
-}
 .col-md-4{
   height:100%;
+}
+.panel{
+  height:100%;
+}
+.panel-body{
+  padding:0;
+  height:calc(100% - 65px);
 }
 .editbar{
   margin: 0;
@@ -28,31 +31,21 @@ h3{
   padding: 0;
   height:100%;
 }
+#input, #modifier, #output{
+  height:100%;
+}
 .CodeMirror{
   height:auto;
-}
-.navbar-collapse{
-  padding: 0;
 }
 .navbar-btn.btn-xs{
   margin: 0;
   line-height: 1;
   padding: 3px 5px;
 }
-pre{
-  height:100%;
-}
-textarea{
-  height:100%;
+#input-file, #script-file{
+  display:none;
 }
 #script{
   max-width:100%;
   min-height: 400px;
-}
-#error-wrapper{
-  display: none;
-  position: absolute;
-  bottom: -50px;
-  right: 25px;
-  z-index: 1;
 }
