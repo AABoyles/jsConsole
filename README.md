@@ -1,7 +1,7 @@
 jsConsole
 =========
 
-A Sandbox for data manipulation using Underscore.js
+A Sandbox for data manipulation using LoDash.js, super-powered by Underscore.string and Underscore-contrib
 
 by Tony Boyles
 
@@ -30,7 +30,6 @@ Couldn't you just use the Node.js CLI?
 
 Sure.  I just don't like it very much, and I often find myself wanting to write little javascripts that eat JSON and return different JSON, but not wanting to play with a much heavier solution like Node.js or a NoSQL database like Mongo.  Sometimes, you just want to open a browser, paste in some JSON, write code to transform it, and copy the output JSON for use somewhere else. Quick and dirty.
 
-
 Couldn't you just use jsfiddle?
 -------------------------------
 
@@ -49,5 +48,4 @@ Possibly.  jQ is a great little tool, and it can do some amazing things.  But it
 Couldn't you just u...
 ----------------------
 
-STOP IT; I GET IT!  It's a crowded field.  If you like another solution, the use it!  I wrote this one because I like this one.
-
+STOP IT; I GET IT!  It's a crowded field.  If you like another solution, the use that!  I wrote this one because I *like* this one.
