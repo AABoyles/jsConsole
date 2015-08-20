@@ -1,6 +1,10 @@
 var input = "[]", script = "output = _(input).map(function(val){\n  return val;\n});", output = "[]";
 
 $(function(){
+
+  if(Cookies.get("input")){
+    input = Cookies.get("input");
+  }
   
   var inputeditor = CodeMirror($("#input")[0],{
     value: input,
@@ -8,10 +12,15 @@ $(function(){
     lineNumbers: true
   });
   inputeditor.on("change", function(e){
+    Cookies.set("input", inputeditor.getValue());
     if(_.isJSON(inputeditor.getValue())){
       translate();
     }
   });
+
+  if(Cookies.get("script")){
+    script = Cookies.get("script");
+  }
 
   var jseditor = CodeMirror($("#modifier")[0],{
     value: script,
@@ -19,6 +28,7 @@ $(function(){
     lineNumbers: true
   });
   jseditor.on("change", function(e){
+    Cookies.set("script", jseditor.getValue());
     translate();
   });
 
@@ -109,5 +119,7 @@ $(function(){
   });
 
   $('input[name="prints"]').change(translate);
+
+  translate();
 
 });
