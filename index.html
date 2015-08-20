@@ -6,8 +6,6 @@
   <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css" />
   <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap-theme.min.css" />
   <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/codemirror/5.5.0/codemirror.min.css" />
-  <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/alertify.js/0.3.11/alertify.core.min.css" />
-  <link rel="Stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/alertify.js/0.3.11/alertify.bootstrap.min.css" />
   <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body>
@@ -15,8 +13,7 @@
   <nav class="navbar navbar-default navbar-static-top">
     <div class="container-fluid">
       <div class="navbar-header">
-        <strong><a class="navbar-brand" href="#">jsConsole</a></strong>
-        <i class="navbar-brand">On-the-fly JSON manuiplation with <a href="http://underscorejs.org">Underscore.js</a></i>
+        <strong><a class="navbar-brand" href="#" data-toggle="modal" data-target="#myModal">jsConsole</a></strong>
       </div>
     </div>
   </nav>
@@ -88,6 +85,30 @@
       </div>
     </div>
   </div>
+  
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">jsConsole</h4>
+        </div>
+        <div class="modal-body">
+          <p>jsConsole is a highly responsive, pure client-side platform for on-the-fly JSON manuiplation. Originally inspired by <a href="http://underscorejs.org">Underscore.js</a>, it is now powered by the following (ridiculously extensive) technology stack:</p>
+          <ul>
+            <li><a href="https://lodash.com/docs">LoDash</a> - To provide the base functional programming grammar.</li>
+            <li><a href="http://documentcloud.github.io/underscore-contrib/">Underscore-contrib</a> - To extend to some genuinely far-reaching edge cases.</li>
+            <li><a href="http://epeli.github.io/underscore.string/#api">Underscore.string</a> - To super-power string manipulations.</li>
+          </ul>
+          <p>To work it, load up a JSON file (or just paste it in) to the left panel (top on mobile). Then write your function chain. All of the functions in the above libraries are at your disposal. A trivial example is included to get you started. Be sure you ingest the *input* and save the resulting object to *output*. The contents of output will appear automagically in the right pane. From there you can save the manipulator script and output.</p>
+          <p class="text-center">jsConsole is a product of <a href="http://futurecensus.github.io/"><span id="future">Future</span><span id="census">Census</span></a>.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Got it.</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
   <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/underscore-contrib/0.3.0/underscore-contrib.min.js"></script>
@@ -97,7 +118,6 @@
   <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/codemirror/5.5.0/codemirror.min.js"></script>
   <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/codemirror/5.5.0/mode/javascript/javascript.min.js"></script>
   <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/js-cookie/2.0.3/js.cookie.min.js"></script>
-  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/alertify.js/0.3.11/alertify.min.js"></script>
   <script type="text/javascript" src="console.js"></script>
 </body>
 </html>

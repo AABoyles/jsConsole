@@ -49,3 +49,19 @@ body{
   max-width:100%;
   min-height: 400px;
 }
+.modal-dialog{
+	z-index: 1050;
+}
+#future { 
+  color: orange !important; 
+}
+
+#census {
+  color: black !important;
+}
+
+#future, #census {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+}
